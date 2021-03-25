@@ -1,13 +1,17 @@
 package yan.spring5recipeapp.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-public class UoMeasure {
+public class Category {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
+    @ManyToMany(mappedBy = "categories")
+    private Set<Recipe> recipes;
 
     public Long getId() {
         return id;
@@ -17,11 +21,19 @@ public class UoMeasure {
         this.id = id;
     }
 
-    public String getUom() {
+    public String getDescription() {
         return description;
     }
 
-    public void setUom(String uom) {
+    public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<Recipe> getRecipes() {
+        return recipes;
+    }
+
+    public void setRecipes(Set<Recipe> recipes) {
+        this.recipes = recipes;
     }
 }
