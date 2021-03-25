@@ -3,7 +3,7 @@ package yan.spring5recipeapp.domain;
 import javax.persistence.*;
 
 @Entity
-public class UoMeasure {
+public class UnitOfMeasure {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,11 +17,11 @@ public class UoMeasure {
         this.id = id;
     }
 
-    public String getUom() {
+    public String getDescription() {
         return description;
     }
 
-    public void setUom(String uom) {
+    public void setDescription(String description) {
         this.description = description;
     }
 }
